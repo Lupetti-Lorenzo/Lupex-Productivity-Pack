@@ -1,7 +1,7 @@
 {
 	"name": "lupex-productivity-pack",
 	"displayName": "Lupex Productivity Pack",
-	"publisher": "Lorenzo Lupetti",
+	"publisher": "Lorenzo-Lupetti",
 	"author": {
 		"name": "Lorenzo Lupetti"
 	},
@@ -24,7 +24,7 @@
 		"Count"
 	],
 	"description": "My personal productivity set of snippets and exts. Also there is a simple timer to track your coding sessions and a countdown feature to remind you to take a break and do some stretch.",
-	"icon": "./src/icon.png",
+	"icon": "icon.png",
 	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.52.0"

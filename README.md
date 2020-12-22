@@ -6,11 +6,17 @@ My personal productivity set of snippets and exts. Also there is a simple timer 
 
 ![](preview.gif)
 
+Also there is a small set of console.log snippets
+
+-   `logc`: print a colored log.
+-   `logd`: print a debug log.
+-   `logv`: print a visual log.
+
 ## Extension Settings
 
 This extension contributes the following settings:
 
--   `lupex.timer`: enable/disable the timer feature
+-   `lupex.timer`: enable/disable the timer feature.
 -   `lupex.countDown.enabled`: enable/disable the count down feature.
 -   `lupex.countDown.redTextLastTotSeconds`: The last tot seconds of the count down are displayed red.
 
