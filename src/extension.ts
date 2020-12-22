@@ -6,13 +6,14 @@ import * as vscode from "vscode";
 // your extension is activated the very first time the command is executed
 
 export function activate({ subscriptions }: vscode.ExtensionContext) {
+	const config = vscode.workspace.getConfiguration("lupex");
 	//TIMER
-	if (vscode.workspace.getConfiguration("lupex").get("timer") === true) {
+	if (config.timer === true) {
 		let myStatusBarItem: vscode.StatusBarItem;
 		let intervalID: any;
-		let currentTime = 0;
+		let currentTime: number = 0;
 		const statusBarIcon: string = "$(extensions-sync-enabled)";
-		const statusBarTxt: string = statusBarIcon + " Timer";
+		const statusBarTxt: string = `${statusBarIcon} Timer`;
 		//interface just to make the timerStates iterable
 		interface IterableObj<TValue> {
 			[id: string]: TValue;
@@ -78,7 +79,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 			}),
 		);
 
-		// create a new status bar item that we can now manage
+		// create a new status bar item
 		myStatusBarItem = vscode.window.createStatusBarItem(
 			vscode.StatusBarAlignment.Right,
 			300,
@@ -106,15 +107,12 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 	//COUNT DOWN
 	//
 
-	if (
-		vscode.workspace.getConfiguration("lupex").get("countDown.enabled") ===
-		true
-	) {
+	if (config.countDown.enabled === true) {
 		let myStatusBarItem: vscode.StatusBarItem;
 		let intervalID: any = undefined;
-		let currentTime = 0;
+		let currentTime: number = 0;
 		const statusBarIcon: string = "$(timeline-open)";
-		const statusBarTxt: string = statusBarIcon + " CountDown";
+		const statusBarTxt: string = `${statusBarIcon} Next Stretch`;
 		// register a command that is invoked when the status bar item is selected
 		const myCommandId = "lupex.countDown";
 		subscriptions.push(
@@ -181,9 +179,8 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 					currentTime--;
 
 					//last 30s display red text
-					const setting: string = vscode.workspace
-						.getConfiguration("lupex")
-						.get("countDown.redTextLastTotSeconds") as string;
+					const setting: string =
+						config.countDown.redTextLastTotSeconds;
 					if (setting !== "inactive") {
 						const color: string = "firebrick";
 						let num: number;

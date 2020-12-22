@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/microsoft/vscode-wordcount.git"
+		"url": "https://github.com/Lupetti-Lorenzo/Lupex-Productivity-Pack"
 	},
 	"galleryBanner": {
 		"color": "#629cff",
@@ -23,7 +23,7 @@
 		"Timer",
 		"Count"
 	],
-	"description": "My personal productivity set of snippets and exts.",
+	"description": "My personal productivity set of snippets and exts. Also there is a simple timer to track your coding sessions and a countdown feature to remind you to take a break and do some stretch.",
 	"icon": "./src/icon.png",
 	"version": "1.0.0",
 	"engines": {
