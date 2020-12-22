@@ -25,7 +25,7 @@
 	],
 	"description": "My personal productivity set of snippets and exts. Also there is a simple timer to track your coding sessions and a countdown feature to remind you to take a break and do some stretch.",
 	"icon": "icon.png",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
