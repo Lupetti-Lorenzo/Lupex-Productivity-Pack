@@ -2,11 +2,7 @@
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
+My personal productivity set of snippets and exts. Also there is a simple timer to track your coding sessions and a countdown feature to remind you to take a break and do some stretch.
 
 ![](preview.gif)
 
