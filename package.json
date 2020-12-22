@@ -1,0 +1,111 @@
+{
+	"name": "lupex-productivity-pack",
+	"displayName": "Lupex Productivity Pack",
+	"publisher": "Lorenzo Lupetti",
+	"author": {
+		"name": "Lorenzo Lupetti"
+	},
+	"bugs": {
+		"email": "lupetti.lorenzo3@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode-wordcount.git"
+	},
+	"galleryBanner": {
+		"color": "#629cff",
+		"theme": "dark"
+	},
+	"keywords": [
+		"Lupex",
+		"Productivity",
+		"Pack",
+		"Timer",
+		"Count"
+	],
+	"description": "My personal productivity set of snippets and exts.",
+	"icon": "./src/icon.png",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Snippets",
+		"Extension Packs",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [],
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets.json"
+			}
+		],
+		"configuration": {
+			"title": "Lupex productivity",
+			"properties": {
+				"lupex.timer": {
+					"type": "boolean",
+					"default": true,
+					"description": "A timer that sits in the status bar that can be started, stopped and restarted to timer your coding sessions."
+				},
+				"lupex.countDown.enabled": {
+					"type": "boolean",
+					"default": true,
+					"description": "A countdown that sits in the status bar and tells you when is time to get up and do some stretching."
+				},
+				"lupex.countDown.redTextLastTotSeconds": {
+					"type": "string",
+					"default": "30 seconds",
+					"enum": [
+						"inactive",
+						"30 seconds",
+						"1 minute",
+						"2 minutes",
+						"5 minutes"
+					],
+					"description": "The last tot seconds of the count down are displayed red"
+				}
+			}
+		}
+	},
+	"extensionPack": [
+		"mgmcdermott.vscode-language-babel",
+		"coenraads.bracket-pair-colorizer-2",
+		"esbenp.prettier-vscode",
+		"alefragnani.rtf",
+		"visualstudioexptteam.vscodeintellicode",
+		"christian-kohler.path-intellisense",
+		"lihui.vs-color-picker"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"@typescript-eslint/eslint-plugin": "^4.9.0",
+		"@typescript-eslint/parser": "^4.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	}
+}
