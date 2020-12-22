@@ -3,7 +3,7 @@
 ## Features
 
 My personal productivity set of snippets and exts. Also there is a simple timer to track your coding sessions and a countdown feature to remind you to take a break and do some stretch.
-\!\[]\(./preview.gif)
+
 ![](./preview.gif)
 
 Also there is a small set of console.log snippets
