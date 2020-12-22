@@ -7,13 +7,14 @@ const vscode = require("vscode");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate({ subscriptions }) {
+    const config = vscode.workspace.getConfiguration("lupex");
     //TIMER
-    if (vscode.workspace.getConfiguration("lupex").get("timer") === true) {
+    if (config.timer === true) {
         let myStatusBarItem;
         let intervalID;
         let currentTime = 0;
         const statusBarIcon = "$(extensions-sync-enabled)";
-        const statusBarTxt = statusBarIcon + " Timer";
+        const statusBarTxt = `${statusBarIcon} Timer`;
         const timerStates = Object.freeze({
             start: "START",
             stop: "STOP",
@@ -64,7 +65,7 @@ function activate({ subscriptions }) {
             });
             quickPick.show();
         }));
-        // create a new status bar item that we can now manage
+        // create a new status bar item
         myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 300);
         myStatusBarItem.command = myCommandId;
         myStatusBarItem.text = statusBarTxt;
@@ -85,13 +86,12 @@ function activate({ subscriptions }) {
     //
     //COUNT DOWN
     //
-    if (vscode.workspace.getConfiguration("lupex").get("countDown.enabled") ===
-        true) {
+    if (config.countDown.enabled === true) {
         let myStatusBarItem;
         let intervalID = undefined;
         let currentTime = 0;
         const statusBarIcon = "$(timeline-open)";
-        const statusBarTxt = statusBarIcon + " CountDown";
+        const statusBarTxt = `${statusBarIcon} Next Stretch`;
         // register a command that is invoked when the status bar item is selected
         const myCommandId = "lupex.countDown";
         subscriptions.push(vscode.commands.registerCommand(myCommandId, () => {
@@ -147,9 +147,7 @@ function activate({ subscriptions }) {
                 else {
                     currentTime--;
                     //last 30s display red text
-                    const setting = vscode.workspace
-                        .getConfiguration("lupex")
-                        .get("countDown.redTextLastTotSeconds");
+                    const setting = config.countDown.redTextLastTotSeconds;
                     if (setting !== "inactive") {
                         const color = "firebrick";
                         let num;
